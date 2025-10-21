@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Tanjung Tirto - Selamat Datang</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menggunakan font Inter sebagai standar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712; /* Latar Belakang Sangat Gelap */
+            color: #d1d5db; /* Teks default (gray-300) */
+        }
+        /* Custom scrollbar for aesthetics (Hijau) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #059669; /* green-600 */
+            border-radius: 10px;
+        }
+
+        /* --- EFEK MENYALA (GLOW EFFECT) BARU --- */
+        /* Efek Menyala untuk Tombol Utama (Beranda & Kontak) */
+        .glow-button {
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4); /* green-600 glow */
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover {
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.7), 0 0 15px rgba(5, 150, 105, 0.5); /* Lebih bersinar saat hover */
+            transform: translateY(-2px);
+        }
+
+        /* Style untuk tombol navigasi aktif (Hijau gelap) dengan efek glow */
+        .nav-link.active {
+            background-color: #065f46; /* Darker green for active state */
+            color: white;
+            box-shadow: 0 0 10px rgba(6, 95, 70, 0.8); /* Glow effect for active link */
+        }
+        .nav-link:hover:not(.active) {
+             box-shadow: 0 0 5px rgba(6, 95, 70, 0.3); /* Subtle glow on hover for non-active links */
+        }
+        
+        /* Menghilangkan border focus default di elemen interaktif (Hijau) */
+        :focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.4); /* Tailwind green focus ring (green-600) */
+        }
+
+        /* Style Dark Mode untuk Input Form */
+        .dark-input {
+            background-color: #1f2937; /* gray-800 */
+            color: white;
+            border-color: #4b5563; /* gray-600 */
+        }
+        .dark-input:focus {
+            border-color: #059669; /* green-600 */
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header & Navigasi (Warna Gelap) -->
+    <header class="sticky top-0 z-50 bg-gray-900 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="#beranda" class="text-3xl font-extrabold text-green-400 hover:text-green-300 transition duration-300 rounded-lg p-1">
+                        <span class="block sm:inline">Mis Tanjung Tirto</span>
+                    </a>
+                </div>
+
+                <!-- Tombol Menu Mobile -->
+                <div class="-mr-2 -my-2 md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-green-600 rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-100 hover:bg-green-700 focus:ring-2 focus:ring-inset focus:ring-green-500 transition duration-150" aria-expanded="false">
+                        <span class="sr-only">Buka menu utama</span>
+                        <!-- Icon menu/hamburger -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-4 lg:space-x-6">
+                    <a href="#beranda" class="nav-link active text-base font-medium text-white px-3 py-2 rounded-lg bg-green-700 hover:bg-green-800 transition duration-300">Beranda</a>
+                    <a href="#visi-misi" class="nav-link text-base font-medium text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-800 transition duration-300">Visi Misi</a>
+                    <a href="#prestasi" class="nav-link text-base font-medium text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-800 transition duration-300">Prestasi</a>
+                    <a href="#guru-staff" class="nav-link text-base font-medium text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-800 transition duration-300">Guru & Staff</a>
+                    <a href="#kegiatan" class="nav-link text-base font-medium text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-800 transition duration-300">Kegiatan</a>
+                    <a href="#ekstra" class="nav-link text-base font-medium text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-800 transition duration-300">Ekstra Kurikuler</a>
+                    <a href="#galeri" class="nav-link text-base font-medium text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-800 transition duration-300">Galeri</a>
+                    <a href="#kontak" class="nav-link text-base font-medium text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-800 transition duration-300">Kontak</a>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile (Warna Gelap) -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-gray-900 shadow-2xl md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beranda" class="nav-link mobile-link active block px-3 py-2 rounded-md text-base font-medium text-white bg-green-600">Beranda</a>
+                <a href="#visi-misi" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">Visi Misi</a>
+                <a href="#prestasi" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">Prestasi</a>
+                <a href="#guru-staff" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">Guru & Staff</a>
+                <a href="#kegiatan" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">Kegiatan</a>
+                <a href="#ekstra" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">Ekstra Kurikuler</a>
+                <a href="#galeri" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">Galeri</a>
+                <a href="#kontak" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama (Semua Section - Latar Belakang Gelap) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- 1. Beranda -->
+        <section id="beranda" class="content-section bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-green-400 mb-6">Selamat Datang di Mis Tanjung Tirto</h1>
+            <p class="text-lg text-gray-400 mb-8">Menciptakan generasi cerdas, berkarakter, dan berdaya saing global melalui pendidikan yang inovatif dan inspiratif.</p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img class="w-full h-auto rounded-lg shadow-xl" src="https://placehold.co/600x400/047857/FFFFFF?text=Gedung+Sekolah" alt="Foto Gedung Sekolah">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-200 mb-4">Pendidikan Masa Depan</h2>
+                    <p class="text-gray-400">Kami menawarkan kurikulum terintegrasi yang fokus pada pengembangan akademis, keterampilan abad ke-21, dan pembentukan karakter. Fasilitas modern kami mendukung lingkungan belajar yang kondusif dan menyenangkan bagi setiap siswa.</p>
+                    <!-- Tombol dengan glow-button -->
+                    <a href="#visi-misi" class="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300 glow-button shadow-lg">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Visi Misi (Warna Gelap Kontras) -->
+        <section id="visi-misi" class="content-section hidden bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl font-extrabold text-green-400 mb-8 border-b-2 pb-2 border-green-700">Visi & Misi Sekolah</h1>
+            
+            <div class="grid lg:grid-cols-2 gap-10">
+                <!-- Visi (Hijau Gelap) -->
+                <div class="bg-green-900 p-6 rounded-lg shadow-inner border-l-4 border-green-600">
+                    <h2 class="text-3xl font-bold text-green-300 mb-4 flex items-center">
+                        <svg class="w-8 h-8 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.275a2 2 0 010 2.83L11.83 17.67M16 4V1M4 4V1"></path></svg>
+                        Visi
+                    </h2>
+                    <p class="text-lg italic text-gray-300">"Menjadi pusat pendidikan terkemuka yang menghasilkan pemimpin masa depan dengan integritas tinggi, kecerdasan emosional, dan keunggulan akademis."</p>
+                </div>
+
+                <!-- Misi (Teal Gelap) -->
+                <div class="bg-teal-900 p-6 rounded-lg shadow-inner border-l-4 border-teal-600">
+                    <h2 class="text-3xl font-bold text-teal-300 mb-4 flex items-center">
+                        <svg class="w-8 h-8 mr-2 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Misi
+                    </h2>
+                    <ul class="list-none space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-teal-400 font-bold mr-2 text-xl">&bull;</span>
+                            Melaksanakan pembelajaran yang berpusat pada siswa dan berorientasi pada pemecahan masalah.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 font-bold mr-2 text-xl">&bull;</span>
+                            Membangun budaya sekolah yang religius, disiplin, dan menghargai keberagaman.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 font-bold mr-2 text-xl">&bull;</span>
+                            Mengembangkan potensi non-akademis melalui program ekstrakurikuler yang terstruktur.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Prestasi (Warna Gelap Kontras) -->
+        <section id="prestasi" class="content-section hidden bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl font-extrabold text-green-400 mb-8 border-b-2 pb-2 border-green-700">Prestasi Gemilang</h1>
+            
+            <div class="space-y-6">
+                <!-- Prestasi 1 (Yellow Gelap) -->
+                <div class="p-5 border border-yellow-700 rounded-lg shadow-md hover:shadow-xl transition duration-300 bg-yellow-900">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-4xl text-yellow-400">🏆</span>
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-200">Juara 1 Olimpiade Sains Nasional (OSN) - Bidang Fisika</h2>
+                            <p class="text-sm text-gray-400">Tingkat Nasional, Tahun 2024 - Diraih oleh Ananda Budi Santoso</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prestasi 2 (Amber Gelap) -->
+                <div class="p-5 border border-amber-700 rounded-lg shadow-md hover:shadow-xl transition duration-300 bg-amber-900">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-4xl text-amber-400">🥇</span>
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-200">Medali Emas Kejuaraan Robotik Internasional</h2>
+                            <p class="text-sm text-gray-400">Kategori Sumo Robot, Singapore Robotics Challenge, Tahun 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prestasi 3 (Green Gelap) -->
+                <div class="p-5 border border-green-700 rounded-lg shadow-md hover:shadow-xl transition duration-300 bg-green-900">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-4xl text-green-400">🌿</span>
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-200">Penghargaan Sekolah Adiwiyata Tingkat Provinsi</h2>
+                            <p class="text-sm text-gray-400">Diberikan atas komitmen dalam pelestarian lingkungan sekolah, Tahun 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Guru dan Staff (Warna Gelap) -->
+        <section id="guru-staff" class="content-section hidden bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl font-extrabold text-green-400 mb-8 border-b-2 pb-2 border-green-700">Guru dan Staff Profesional</h1>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <!-- Kartu Guru 1 -->
+                <div class="text-center p-4 bg-gray-800 rounded-lg shadow-md">
+                    <img class="w-24 h-24 rounded-full mx-auto object-cover mb-3" src="https://placehold.co/96x96/047857/FFFFFF?text=DR+A" alt="Foto Guru">
+                    <h3 class="font-bold text-gray-200">Dr. Aisyah S.Pd., M.Sc.</h3>
+                    <p class="text-sm text-green-500">Kepala Sekolah</p>
+                </div>
+                <!-- Kartu Guru 2 -->
+                <div class="text-center p-4 bg-gray-800 rounded-lg shadow-md">
+                    <img class="w-24 h-24 rounded-full mx-auto object-cover mb-3" src="https://placehold.co/96x96/374151/D1D5DB?text=Bpk+B" alt="Foto Guru">
+                    <h3 class="font-bold text-gray-200">Bapak Budi Hartono</h3>
+                    <p class="text-sm text-gray-400">Guru Matematika</p>
+                </div>
+                <!-- Kartu Guru 3 -->
+                <div class="text-center p-4 bg-gray-800 rounded-lg shadow-md">
+                    <img class="w-24 h-24 rounded-full mx-auto object-cover mb-3" src="https://placehold.co/96x96/374151/D1D5DB?text=Ibu+C" alt="Foto Guru">
+                    <h3 class="font-bold text-gray-200">Ibu Citra Dewi</h3>
+                    <p class="text-sm text-gray-400">Guru Bahasa Inggris</p>
+                </div>
+                <!-- Kartu Staff 4 -->
+                <div class="text-center p-4 bg-gray-800 rounded-lg shadow-md">
+                    <img class="w-24 h-24 rounded-full mx-auto object-cover mb-3" src="https://placehold.co/96x96/374151/D1D5DB?text=Staff+D" alt="Foto Staff">
+                    <h3 class="font-bold text-gray-200">Staff Deni</h3>
+                    <p class="text-sm text-gray-400">Administrasi</p>
+                </div>
+                <!-- Kartu Guru 5 -->
+                <div class="text-center p-4 bg-gray-800 rounded-lg shadow-md">
+                    <img class="w-24 h-24 rounded-full mx-auto object-cover mb-3" src="https://placehold.co/96x96/374151/D1D5DB?text=Bpk+E" alt="Foto Guru">
+                    <h3 class="font-bold text-gray-200">Bapak Eko Prasetyo</h3>
+                    <p class="text-sm text-gray-400">Guru Olahraga</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Kegiatan (Warna Gelap) -->
+        <section id="kegiatan" class="content-section hidden bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl font-extrabold text-green-400 mb-8 border-b-2 pb-2 border-green-700">Kegiatan Sekolah Terbaru</h1>
+            
+            <div class="space-y-8">
+                <!-- Kegiatan 1 -->
+                <div class="flex flex-col md:flex-row bg-gray-800 p-4 rounded-lg shadow-md">
+                    <img class="w-full md:w-1/3 h-auto object-cover rounded-lg mb-4 md:mb-0 md:mr-4" src="https://placehold.co/300x200/059669/FFFFFF?text=Field+Trip" alt="Foto Field Trip">
+                    <div>
+                        <span class="text-sm font-semibold text-green-500">14 Agustus 2025</span>
+                        <h2 class="text-2xl font-bold text-gray-200 mt-1 mb-2">Field Trip ke Museum Sejarah</h2>
+                        <p class="text-gray-400">Kegiatan Field Trip tahunan untuk siswa kelas X dalam rangka mempelajari sejarah lokal dan warisan budaya bangsa.</p>
+                    </div>
+                </div>
+                <!-- Kegiatan 2 -->
+                <div class="flex flex-col md:flex-row bg-gray-800 p-4 rounded-lg shadow-md">
+                    <img class="w-full md:w-1/3 h-auto object-cover rounded-lg mb-4 md:mb-0 md:mr-4" src="https://placehold.co/300x200/EF4444/FFFFFF?text=Lomba+Seni" alt="Foto Lomba Seni">
+                    <div>
+                        <span class="text-sm font-semibold text-red-500">01-03 September 2025</span>
+                        <h2 class="text-2xl font-bold text-gray-200 mt-1 mb-2">Pekan Seni dan Kreativitas Siswa</h2>
+                        <p class="text-gray-400">Berbagai lomba dan pameran seni, mulai dari melukis, fotografi, hingga pertunjukan musik dan drama.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Ekstra Kurikuler (Warna Gelap Kontras) -->
+        <section id="ekstra" class="content-section hidden bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl font-extrabold text-green-400 mb-8 border-b-2 pb-2 border-green-700">Pilihan Ekstra Kurikuler</h1>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Ekstra 1: Olahraga (Hijau Gelap) -->
+                <div class="p-5 bg-green-900 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <span class="text-5xl mb-3 text-green-400">⚽</span>
+                    <h3 class="font-bold text-xl mb-2 text-green-300">Sepak Bola & Futsal</h3>
+                    <p class="text-sm text-gray-400">Melatih kekompakan tim, fisik, dan strategi permainan.</p>
+                </div>
+                <!-- Ekstra 2: Akademis (Teal Gelap) -->
+                <div class="p-5 bg-teal-900 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <span class="text-5xl mb-3 text-teal-400">💻</span>
+                    <h3 class="font-bold text-xl mb-2 text-teal-300">Klub IT & Robotik</h3>
+                    <p class="text-sm text-gray-400">Belajar pemrograman dasar, coding, dan merakit robot sederhana.</p>
+                </div>
+                <!-- Ekstra 3: Seni (Pink Gelap) -->
+                <div class="p-5 bg-pink-900 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <span class="text-5xl mb-3 text-pink-400">🎭</span>
+                    <h3 class="font-bold text-xl mb-2 text-pink-300">Seni Tari & Teater</h3>
+                    <p class="text-sm text-gray-400">Mengembangkan bakat seni pertunjukan dan kepercayaan diri di atas panggung.</p>
+                </div>
+                <!-- Ekstra 4: Lingkungan (Lime Gelap) -->
+                <div class="p-5 bg-lime-900 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <span class="text-5xl mb-3 text-lime-400">🌿</span>
+                    <h3 class="font-bold text-xl mb-2 text-lime-300">Pencinta Alam & Adiwiyata</h3>
+                    <p class="text-sm text-gray-400">Fokus pada edukasi lingkungan dan aksi hijau di sekolah dan komunitas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Galeri (Warna Gelap) -->
+        <section id="galeri" class="content-section hidden bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl font-extrabold text-green-400 mb-8 border-b-2 pb-2 border-green-700">Galeri Foto Sekolah</h1>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gambar Placeholder menggunakan skema warna gelap untuk konsistensi -->
+                <img class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300 cursor-pointer" src="https://placehold.co/300x200/374151/FFFFFF?text=Kelas+Belajar" alt="Galeri Foto 1">
+                <img class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300 cursor-pointer" src="https://placehold.co/300x200/374151/FFFFFF?text=Kegiatan+Olah+Raga" alt="Galeri Foto 2">
+                <img class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300 cursor-pointer" src="https://placehold.co/300x200/374151/FFFFFF?text=Perpustakaan" alt="Galeri Foto 3">
+                <img class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300 cursor-pointer" src="https://placehold.co/300x200/374151/FFFFFF?text=Ekskul+Robotik" alt="Galeri Foto 4">
+                <img class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300 cursor-pointer" src="https://placehold.co/300x200/374151/FFFFFF?text=Upacara+Bendera" alt="Galeri Foto 5">
+                <img class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300 cursor-pointer" src="https://placehold.co/300x200/374151/FFFFFF?text=Acara+Sekolah" alt="Galeri Foto 6">
+            </div>
+        </section>
+
+        <!-- 8. Kontak (Warna Gelap) -->
+        <section id="kontak" class="content-section hidden bg-gray-900 p-6 sm:p-10 rounded-xl shadow-xl mb-10">
+            <h1 class="text-4xl font-extrabold text-green-400 mb-8 border-b-2 pb-2 border-green-700">Hubungi Kami</h1>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Informasi Kontak (Kotak Hijau Gelap) -->
+                <div class="space-y-4">
+                    <p class="text-lg font-semibold text-gray-300">Kami siap menjawab pertanyaan Anda. Silakan hubungi kami melalui:</p>
+                    
+                    <div class="flex items-center space-x-3 p-3 bg-green-900 rounded-lg">
+                        <span class="text-2xl text-green-400">📞</span>
+                        <div>
+                            <p class="font-medium text-gray-200">Telepon:</p>
+                            <p class="text-green-400">(021) 1234 5678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3 p-3 bg-green-900 rounded-lg">
+                        <span class="text-2xl text-green-400">📧</span>
+                        <div>
+                            <p class="font-medium text-gray-200">Email:</p>
+                            <p class="text-green-400">info@sekolah-unggulan.sch.id</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 p-3 bg-green-900 rounded-lg">
+                        <span class="text-2xl text-green-400">📍</span>
+                        <div>
+                            <p class="font-medium text-gray-200">Alamat:</p>
+                            <p class="text-green-400">Jl. Pendidikan No. 100, Jakarta Pusat, DKI Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulir Kontak (Latar Belakang Gray-800) -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-inner">
+                    <h2 class="text-2xl font-bold text-gray-200 mb-4">Kirim Pesan</h2>
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label for="nama" class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama" required class="dark-input w-full px-3 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="dark-input w-full px-3 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150">
+                        </div>
+                        <div class="mb-6">
+                            <label for="pesan" class="block text-sm font-medium text-gray-300 mb-1">Pesan Anda</label>
+                            <textarea id="pesan" name="pesan" rows="4" required class="dark-input w-full px-3 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150"></textarea>
+                        </div>
+                        <!-- Tombol dengan glow-button -->
+                        <button type="submit" class="w-full bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-700 transition duration-300 glow-button shadow-lg">Kirim Pesan</button>
+                    </form>
+                    <p id="form-message" class="mt-4 text-center hidden font-semibold text-green-400"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white mt-10 p-6 sm:p-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2025 Sekolah Unggulan. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p class="text-sm mt-2">Dibuat dengan semangat pendidikan dan teknologi.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Interaksi -->
+    <script>
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        // Fungsi untuk menampilkan section yang dipilih
+        function showSection(targetId) {
+            // Sembunyikan semua section
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Tampilkan section yang dituju
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+
+            // Atur link navigasi aktif
+            navLinks.forEach(link => {
+                // Hapus styling non-aktif
+                link.classList.remove('active', 'bg-green-700', 'text-white', 'hover:bg-green-800');
+                link.classList.add('text-gray-300', 'hover:bg-gray-800');
+            });
+            
+            mobileLinks.forEach(link => {
+                // Hapus styling non-aktif
+                link.classList.remove('active', 'bg-green-600', 'text-white');
+                link.classList.add('text-gray-300', 'hover:bg-gray-800');
+            });
+
+            // Cari link yang sesuai dengan targetId (baik desktop maupun mobile)
+            document.querySelectorAll(`a[href="#${targetId}"]`).forEach(link => {
+                link.classList.add('active');
+                if (link.classList.contains('mobile-link')) {
+                    // Styling untuk mobile (Hijau)
+                    link.classList.remove('text-gray-300', 'hover:bg-gray-800');
+                    link.classList.add('bg-green-600', 'text-white');
+                } else {
+                    // Styling untuk desktop (Hijau)
+                    link.classList.remove('text-gray-300', 'hover:bg-gray-800');
+                    link.classList.add('bg-green-700', 'text-white', 'hover:bg-green-800');
+                }
+            });
+            
+            // Tutup menu mobile setelah klik
+            mobileMenu.classList.add('hidden');
+
+            // Gulir ke atas halaman utama
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Event Listener untuk Navigasi
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                showSection(targetId);
+            });
+        });
+
+        // Event Listener untuk Tombol Menu Mobile
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Event Listener untuk Form Kontak
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form
+            
+            // Simulasi pengiriman data
+            formMessage.textContent = 'Pesan Anda telah berhasil dikirim! Kami akan merespons secepatnya.';
+            formMessage.classList.remove('hidden');
+            contactForm.reset(); // Kosongkan form
+            
+            // Sembunyikan pesan setelah 5 detik
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+
+        // Logika saat halaman dimuat (menentukan section mana yang harus ditampilkan)
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialHash = window.location.hash ? window.location.hash.substring(1) : 'beranda';
+            // Validasi hash untuk memastikan itu adalah salah satu ID section yang ada
+            const validIds = Array.from(sections).map(s => s.id);
+            if (validIds.includes(initialHash)) {
+                 showSection(initialHash);
+            } else {
+                 showSection('beranda');
+            }
+        });
+    </script>
+</body>
+</html>
