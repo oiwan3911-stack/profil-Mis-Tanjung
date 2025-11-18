@@ -68,6 +68,17 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease-in-out;
         }
+
+        /* Kelas khusus untuk tombol WhatsApp yang baru */
+        .whatsapp-button {
+            background-color: #25D366; /* WhatsApp Green */
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.8), 0 0 15px rgba(37, 211, 102, 0.5);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -96,9 +107,15 @@
                     <a href="#visi-misi" class="nav-link text-base font-medium text-green-100 px-3 py-2 rounded-lg hover:bg-green-600 transition duration-300">Visi Misi</a>
                     <a href="#prestasi" class="nav-link text-base font-medium text-green-100 px-3 py-2 rounded-lg hover:bg-green-600 transition duration-300">Prestasi</a>
                     <a href="#guru-staff" class="nav-link text-base font-medium text-green-100 px-3 py-2 rounded-lg hover:bg-green-600 transition duration-300">Guru & Staff</a>
-                    <!-- BARU: Menu PPDB -->
-                    <a href="#ppdb" class="nav-link bg-red-500 text-white font-bold px-3 py-2 rounded-lg hover:bg-red-600 transition duration-300">PPDB 2025/2026</a>
-                    <!-- Akhir Menu PPDB -->
+                    
+                    <!-- REVISI PENTING: LINK PPDB UNTUK WHATSAPP -->
+                    <a href="https://wa.me/6281234567890?text=Assalamualaikum.%20Saya%20ingin%20mendaftar%20PPDB%20untuk%20Mis%20Tanjung%20Tirto.%20Mohon%20info%20lebih%20lanjut." 
+                       target="_blank" 
+                       class="nav-link bg-red-500 text-white font-bold px-3 py-2 rounded-lg hover:bg-red-600 transition duration-300 whatsapp-link">
+                        DAFTAR SEKARANG (PPDB)
+                    </a>
+                    <!-- Akhir Revisi Link WhatsApp -->
+
                     <a href="#ekstra" class="nav-link text-base font-medium text-green-100 px-3 py-2 rounded-lg hover:bg-green-600 transition duration-300">Ekstra Kurikuler</a>
                     <a href="#galeri" class="nav-link text-base font-medium text-green-100 px-3 py-2 rounded-lg hover:bg-green-600 transition duration-300">Galeri</a>
                     <a href="#kontak" class="nav-link text-base font-medium text-green-100 px-3 py-2 rounded-lg hover:bg-green-600 transition duration-300">Kontak</a>
@@ -109,13 +126,19 @@
         <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-green-700 shadow-lg md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#beranda" class="nav-link mobile-link active block px-3 py-2 rounded-md text-base font-medium text-white bg-green-600">Beranda</a>
+                <a href="#beranda" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-white bg-green-600">Beranda</a>
                 <a href="#visi-misi" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-green-100 hover:bg-green-600">Visi Misi</a>
                 <a href="#prestasi" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-green-100 hover:bg-green-600">Prestasi</a>
                 <a href="#guru-staff" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-green-100 hover:bg-green-600">Guru & Staff</a>
-                <!-- BARU: Menu PPDB Mobile -->
-                <a href="#ppdb" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600">PPDB 2025/2026</a>
-                <!-- Akhir Menu PPDB Mobile -->
+                
+                <!-- REVISI PENTING: LINK PPDB MOBILE UNTUK WHATSAPP -->
+                <a href="https://wa.me/6281234567890?text=Assalamualaikum.%20Saya%20ingin%20mendaftar%20PPDB%20untuk%20Mis%20Tanjung%20Tirto.%20Mohon%20info%20lebih%20lanjut." 
+                   target="_blank" 
+                   class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-white bg-red-500 hover:bg-red-600 whatsapp-link">
+                    DAFTAR SEKARANG (PPDB)
+                </a>
+                <!-- Akhir Revisi Link WhatsApp Mobile -->
+                
                 <a href="#ekstra" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-green-100 hover:bg-green-600">Ekstra Kurikuler</a>
                 <a href="#galeri" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-green-100 hover:bg-green-600">Galeri</a>
                 <a href="#kontak" class="nav-link mobile-link block px-3 py-2 rounded-md text-base font-medium text-green-100 hover:bg-green-600">Kontak</a>
@@ -128,11 +151,18 @@
         <section id="beranda" class="content-section bg-white p-6 sm:p-10 rounded-xl shadow-md border-t-4 border-green-500 mb-10">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-green-700 mb-6">Selamat Datang di Mis Tanjung Tirto</h1>
             <div class="grid md:grid-cols-2 gap-8 items-center">
-				<img src="mis1.jpeg" class="w-full h-auto rounded-lg shadow-lg border-2 border-green-300" alt="Foto Gedung Sekolah">
+				<img src="https://placehold.co/600x400/10b981/ffffff?text=Gedung+Sekolah" onerror="this.onerror=null;this.src='https://placehold.co/600x400/10b981/ffffff?text=Gedung+Sekolah';" class="w-full h-auto rounded-lg shadow-lg border-2 border-green-300" alt="Foto Gedung Sekolah">
 				<div>
 					<h2 class="text-3xl font-bold text-gray-900 mb-4">Pendidikan Masa Depan yang Cemerlang</h2>
 					<p class="text-gray-700">MIS TANJUNG merupakan sekolah dasar Islam swasta yang terletak di Desa Tanjung, Kecamatan Tirto, Kabupaten Pekalongan, Jawa Tengah. Sekolah ini didirikan pada tanggal 1 Februari 1978 dengan Nomor SK Pendirian Lk/3.c/2867/Pem.MI/78 dan dinaungi oleh Yayasan BPPPMNU Cabang Kabupaten Pekalongan.</p>
-			</div>
+					<!-- Tombol DAFTAR SEKARANG di Beranda -->
+                    <a href="https://wa.me/6281234567890?text=Assalamualaikum.%20Saya%20ingin%20mendaftar%20PPDB%20untuk%20Mis%20Tanjung%20Tirto.%20Mohon%20info%20lebih%20lanjut." 
+                       target="_blank" 
+                       class="mt-6 inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl shadow-sm text-white bg-red-600 hover:bg-red-700 whatsapp-button">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.031 0c-6.627 0-12 5.373-12 12s5.373 12 12 12c2.049 0 3.978-.507 5.666-1.428l1.492.203-1.554 1.492c.005.006-.005.005 0 0l-1.492 1.554.203 1.492c.921 1.688 1.428 3.617 1.428 5.666 0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12zm-3.5 16.5c-.328 0-.625-.035-.86-.067c-.235-.032-.47-.075-.705-.12c-.235-.045-.47-.11-.705-.183c-.235-.073-.47-.16-.705-.262c-.235-.102-.47-.215-.705-.338c-.235-.123-.47-.265-.705-.427c-.235-.162-.47-.34-.705-.535c-.235-.195-.47-.41-.705-.645c-.235-.235-.47-.5-.705-.795c-.235-.295-.47-.64-.705-1.035c-.235-.395-.47-.855-.705-1.38c-.235-.525-.47-1.15-.705-1.875c-.235-.725-.47-1.575-.705-2.55c-.235-.975-.47-2.125-.705-3.45c-.235-1.325-.47-2.85-.705-4.575c-.235-1.725-.47-3.65-.705-5.775c-.235-2.125-.47-4.45-.705-7.05c.575-1.375 1.425-2.575 2.55-3.6c1.125-1.025 2.4-1.85 3.825-2.475 1.425-.625 2.975-.95 4.65-.95s3.225.325 4.65.95c1.425.625 2.7 1.45 3.825 2.475 1.125 1.025 1.975 2.225 2.55 3.6c-.45 1.25-.9 2.525-1.35 3.825s-.875 2.575-1.35 3.85c-.475 1.275-.95 2.475-1.425 3.6c-.475 1.125-.95 2.125-1.425 3.025c-.475.9-.95 1.7-1.425 2.4c-.475.7-.95 1.325-1.425 1.875-.475.55-.95 1.025-1.425 1.425-.475.4-.95.7-1.425.9-.475.2-.95.3-1.425.3z"/>
+                        DAFTAR SEKARANG
+                    </a>
+				</div>
         </section>
 
         <section id="visi-misi" class="content-section hidden bg-white p-6 sm:p-10 rounded-xl shadow-md border-t-4 border-green-500 mb-10">
@@ -176,7 +206,7 @@
             <div class="space-y-6">
                 <div class="p-5 border border-green-200 rounded-lg shadow-sm color-card-hover bg-green-50">
                     <div class="flex items-center space-x-4">
-                        <span class="text-5xl text-green-500"></span>
+                        <span class="text-5xl text-green-500">🏆</span>
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900">Juara 1 Olimpiade Sains Nasional (OSN) - Bidang Fisika</h2>
                             <p class="text-sm text-gray-600">Tingkat Nasional, Tahun 2024 - Diraih oleh Ananda Budi Santoso</p>
@@ -186,7 +216,7 @@
 
                 <div class="p-5 border border-green-200 rounded-lg shadow-sm color-card-hover bg-green-50">
                     <div class="flex items-center space-x-4">
-                        <span class="text-5xl text-green-500"></span>
+                        <span class="text-5xl text-green-500">🏅</span>
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900">Medali Emas Kejuaraan Robotik Internasional</h2>
                             <p class="text-sm text-gray-600">Kategori Sumo Robot, Singapore Robotics Challenge, Tahun 2023</p>
@@ -196,7 +226,7 @@
 
                 <div class="p-5 border border-green-200 rounded-lg shadow-sm color-card-hover bg-green-50">
                     <div class="flex items-center space-x-4">
-                        <span class="text-5xl text-green-500"></span>
+                        <span class="text-5xl text-green-500">🌱</span>
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900">Penghargaan Sekolah Adiwiyata Tingkat Provinsi</h2>
                             <p class="text-sm text-gray-600">Diberikan atas komitmen dalam pelestarian lingkungan sekolah, Tahun 2022</p>
@@ -261,7 +291,7 @@
         <!-- BARU: SECTION PPDB -->
         <section id="ppdb" class="content-section hidden bg-white p-6 sm:p-10 rounded-xl shadow-md border-t-4 border-red-500 mb-10">
             <h1 class="text-4xl font-extrabold text-red-600 mb-8 border-b-2 pb-2 border-red-300 flex items-center">
-                <span class="text-5xl mr-3"></span>
+                <span class="text-5xl mr-3">📣</span>
                 Penerimaan Peserta Didik Baru (PPDB) T.A. 2025/2026
             </h1>
 
@@ -296,15 +326,29 @@
 
                 <!-- Kolom Pendaftaran/CTA -->
                 <div class="lg:col-span-1 bg-red-100 p-6 rounded-xl shadow-lg border-2 border-red-400">
-                    <h2 class="text-2xl font-bold text-red-700 mb-4 text-center">Akses Pendaftaran</h2>
-                    <p class="text-sm text-gray-700 mb-6 text-center">Klik tautan di bawah ini untuk memulai proses pendaftaran secara online.</p>
+                    <h2 class="text-2xl font-bold text-red-700 mb-4 text-center">Akses Pendaftaran Langsung</h2>
+                    <p class="text-sm text-gray-700 mb-6 text-center">Klik tombol di bawah ini untuk memulai pendaftaran melalui WhatsApp.</p>
                     
-                    <a href="https://link-pendaftaran-online-anda.com" target="_blank" class="w-full block text-center bg-red-600 text-white px-6 py-4 rounded-xl font-extrabold text-xl uppercase hover:bg-red-700 transition duration-300 glow-button shadow-red-300">
-                        Daftar Sekarang!
+                    <!-- REVISI PENTING: TOMBOL INI DIUBAH KE WHATSAPP -->
+                    <a href="https://wa.me/6281234567890?text=Assalamualaikum.%20Saya%20ingin%20mendaftar%20PPDB%20untuk%20Mis%20Tanjung%20Tirto.%20Mohon%20info%20lebih%20lanjut." 
+                       target="_blank" 
+                       class="whatsapp-button w-full block text-center text-white px-6 py-4 rounded-xl font-extrabold text-xl uppercase transition duration-300 glow-button shadow-red-300 flex items-center justify-center">
+                       <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.031 0c-6.627 0-12 5.373-12 12s5.373 12 12 12c2.049 0 3.978-.507 5.666-1.428l1.492.203-1.554 1.492c.005.006-.005.005 0 0l-1.492 1.554.203 1.492c.921 1.688 1.428 3.617 1.428 5.666 0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12zm-3.5 16.5c-.328 0-.625-.035-.86-.067c-.235-.032-.47-.075-.705-.12c-.235-.045-.47-.11-.705-.183c-.235-.073-.47-.16-.705-.262c-.235-.102-.47-.215-.705-.338c-.235-.123-.47-.265-.705-.427c-.235-.162-.47-.34-.705-.535c-.235-.195-.47-.41-.705-.645c-.235-.235-.47-.5-.705-.795c-.235-.295-.47-.64-.705-1.035c-.235-.395-.47-.855-.705-1.38c-.235-.525-.47-1.15-.705-1.875c-.235-.725-.47-1.575-.705-2.55c-.235-.975-.47-2.125-.705-3.45c-.235-1.325-.47-2.85-.705-4.575c-.235-1.725-.47-3.65-.705-5.775c-.235-2.125-.47-4.45-.705-7.05c.575-1.375 1.425-2.575 2.55-3.6c1.125-1.025 2.4-1.85 3.825-2.475 1.425-.625 2.975-.95 4.65-.95s3.225.325 4.65.95c1.425.625 2.7 1.45 3.825 2.475 1.125 1.025 1.975 2.225 2.55 3.6c-.45 1.25-.9 2.525-1.35 3.825s-.875 2.575-1.35 3.85c-.475 1.275-.95 2.475-1.425 3.6c-.475 1.125-.95 2.125-1.425 3.025c-.475.9-.95 1.7-1.425 2.4c-.475.7-.95 1.325-1.425 1.875-.475.55-.95 1.025-1.425 1.425-.475.4-.95.7-1.425.9-.475.2-.95.3-1.425.3z"/>
+                        DAFTAR SEKARANG
                     </a>
+                    <!-- Akhir Revisi -->
                     
                     <p class="mt-6 text-center text-sm text-gray-600">Atau hubungi Panitia PPDB (Ibu Siti) di:</p>
-                    <p class="text-center font-bold text-red-600 text-lg">0812-XXXX-XXXX (WhatsApp)</p>
+                    <p class="text-center font-bold text-red-600 text-lg" id="whatsapp-contact">
+                        0812-XXXX-XXXX (WhatsApp)
+                    </p>
+                    
+                    <!-- Tambahkan tombol WhatsApp kecil di sini juga -->
+                    <a href="https://wa.me/6281234567890?text=Assalamualaikum.%20Saya%20ingin%20mendaftar%20PPDB%20untuk%20Mis%20Tanjung%20Tirto.%20Mohon%20info%20lebih%20lanjut." 
+                       target="_blank" 
+                       class="w-full mt-4 block text-center text-white px-4 py-2 rounded-xl font-bold hover:opacity-90 transition duration-300 bg-green-500">
+                        Chat Panitia PPDB
+                    </a>
                 </div>
             </div>
         </section>
@@ -315,27 +359,27 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="p-6 bg-green-50 rounded-xl shadow-sm flex flex-col items-center text-center border-t-4 border-green-400 color-card-hover">
-                    <span class="text-5xl mb-3 text-green-500"></span>	
+                    <span class="text-5xl mb-3 text-green-500">⚜️</span>	
                     <h3 class="font-bold text-xl mb-2 text-gray-900">Pramuka</h3>
                 </div>
                 <div class="p-6 bg-green-50 rounded-xl shadow-sm flex flex-col items-center text-center border-t-4 border-green-400 color-card-hover">
-                    <span class="text-5xl mb-3 text-green-500">
+                    <span class="text-5xl mb-3 text-green-500">🥋</span>
                     <h3 class="font-bold text-xl mb-2 text-gray-900">Pencak Silat</h3>
                 </div>
                 <div class="p-6 bg-green-50 rounded-xl shadow-sm flex flex-col items-center text-center border-t-4 border-green-400 color-card-hover">
-                    <span class="text-5xl mb-3 text-green-500">
+                    <span class="text-5xl mb-3 text-green-500">🥁</span>
                     <h3 class="font-bold text-xl mb-2 text-gray-900">Marching Band</h3>
                 </div>
                 <div class="p-6 bg-green-50 rounded-xl shadow-sm flex flex-col items-center text-center border-t-4 border-green-400 color-card-hover">
-                    <span class="text-5xl mb-3 text-green-500">
+                    <span class="text-5xl mb-3 text-green-500">🏓</span>
                     <h3 class="font-bold text-xl mb-2 text-gray-900">Tenis Meja</h3>
                 </div>
                 <div class="p-6 bg-green-50 rounded-xl shadow-sm flex flex-col items-center text-center border-t-4 border-green-400 color-card-hover">
-                    <span class="text-5xl mb-3 text-green-500">
+                    <span class="text-5xl mb-3 text-green-500">🗣️</span>
                     <h3 class="font-bold text-xl mb-2 text-gray-900">Klub Debat Bahasa Inggris</h3>
                 </div>
                 <div class="p-6 bg-green-50 rounded-xl shadow-sm flex flex-col items-center text-center border-t-4 border-green-400 color-card-hover">
-                    <span class="text-5xl mb-3 text-green-500">
+                    <span class="text-5xl mb-3 text-green-500">📖</span>
                     <h3 class="font-bold text-xl mb-2 text-gray-900">Seni Baca Al-Qur'an</h3>
                 </div>
             </div>
@@ -350,8 +394,8 @@
                 <img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="ruangkepsek.jpeg" alt="Galeri Foto 3">
                 <img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="ruanglab.jpeg" alt="Galeri Foto 4">
                 <img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="perpus.jpeg" alt="Galeri Foto 5">
-                <img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="uks.jpeg" alt="Galeri Foto 6">
-				<img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="parkir.jpeg" alt="Galeri Foto 7">
+                <img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="uks.jpeg." alt="Galeri Foto 6">
+				<img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="Area+Parkir" alt="Galeri Foto 7">
 				<img class="w-full h-40 object-cover rounded-lg shadow-sm transform hover:scale-[1.05] transition duration-300 cursor-pointer border-2 border-green-200" src="kantin.jpeg" alt="Galeri Foto 8">
             </div>
         </section>
@@ -364,7 +408,7 @@
                     <p class="text-lg font-semibold text-gray-700">Kami siap menjawab pertanyaan Anda. Silakan hubungi kami melalui:</p>
                     
                     <div class="flex items-center space-x-3 p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
-                        <span class="text-3xl text-green-500">
+                        <span class="text-3xl text-green-500">📞</span>
                         <div>
                             <p class="font-medium text-gray-900">Telepon:</p>
                             <p class="text-green-600 font-bold">(021) 1234 5678</p>
@@ -372,7 +416,7 @@
                     </div>
                     
                     <div class="flex items-center space-x-3 p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
-                        <span class="text-3xl text-green-500">
+                        <span class="text-3xl text-green-500">📧</span>
                         <div>
                             <p class="font-medium text-gray-900">Email:</p>
                             <p class="text-green-600 font-bold">info@sekolah-unggulan.sch.id</p>
@@ -380,7 +424,7 @@
                     </div>
 
                     <div class="flex items-start space-x-3 p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
-                        <span class="text-3xl text-green-500">
+                        <span class="text-3xl text-green-500">📍</span>
                         <div>
                             <p class="font-medium text-gray-900">Alamat:</p>
                             <p class="text-green-600 font-bold">4J2P+MCG, Tj. Lor, Tanjung, Kec. Tirto, Kabupaten Pekalongan, Jawa Tengah 51151</p>
@@ -428,6 +472,21 @@
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
 
+        // Nomor WhatsApp yang digunakan untuk PPDB (GANTI INI DENGAN NOMOR YANG BENAR)
+        const whatsappNumber = '6281234567890'; // Contoh: Ganti dengan nomor WhatsApp panitia PPDB
+        const formattedWhatsappNumber = '0812-3456-7890'; // Format yang ditampilkan di UI
+
+        // URL WhatsApp dengan pre-filled message
+        const whatsappMessage = encodeURIComponent("Assalamualaikum. Saya ingin mendaftar PPDB untuk Mis Tanjung Tirto. Mohon info lebih lanjut.");
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+        // Update semua elemen yang terkait dengan WhatsApp
+        document.getElementById('whatsapp-contact').textContent = `${formattedWhatsappNumber} (WhatsApp)`;
+        
+        document.querySelectorAll('.whatsapp-link').forEach(link => {
+            link.href = whatsappURL;
+        });
+
         // Fungsi untuk menampilkan section yang dipilih
         function showSection(targetId) {
             sections.forEach(section => {
@@ -442,33 +501,51 @@
             navLinks.forEach(link => {
                 // Hapus styling non-aktif
                 link.classList.remove('active', 'bg-green-600', 'text-white', 'hover:bg-green-700', 'bg-red-500', 'text-white', 'font-bold', 'hover:bg-red-600');
-                link.classList.add('text-green-100', 'hover:bg-green-600');
+                
+                // Tambahkan kelas default untuk link non-PPDB
+                if (!link.classList.contains('whatsapp-link')) {
+                    link.classList.add('text-green-100', 'hover:bg-green-600');
+                }
             });
             
             mobileLinks.forEach(link => {
                 // Hapus styling non-aktif
                 link.classList.remove('active', 'bg-green-600', 'text-white', 'bg-red-500', 'text-white');
-                link.classList.add('text-green-100', 'hover:bg-green-600');
+                
+                // Tambahkan kelas default untuk link non-PPDB
+                if (!link.classList.contains('whatsapp-link')) {
+                    link.classList.add('text-green-100', 'hover:bg-green-600');
+                }
             });
 
             // Cari link yang sesuai dengan targetId (desktop)
             const desktopLink = document.querySelector(`.hidden.md\\:flex a[href="#${targetId}"]`);
             if (desktopLink) {
-                 if (targetId === 'ppdb') {
-                    desktopLink.classList.remove('text-green-100', 'hover:bg-green-600');
-                    desktopLink.classList.add('active', 'bg-red-500', 'text-white', 'font-bold');
+                // Cek apakah link ini adalah link WhatsApp (DAFTAR SEKARANG)
+                if (desktopLink.classList.contains('whatsapp-link')) {
+                    // Link WhatsApp tidak diaktifkan sebagai section, tapi langsung diklik
+                    // Tidak ada perubahan styling aktif di sini karena ini adalah link eksternal
+                } else if (targetId === 'ppdb') {
+                    // Hanya PPDB yang tampilannya merah, walaupun PPDB tidak lagi ada di menu utama (sudah diganti WA)
+                    // Fungsi ini hanya akan dipanggil jika kita navigasi via hash URL, jadi kita kembalikan styling ke PPDB jika ada
+                    const ppdbLinkDesktop = document.querySelector('.hidden.md\\:flex a[href*="whatsapp"]');
+                    if (ppdbLinkDesktop) {
+                        // Jika PPDB diklik, kita tidak mengubah styling menu navigasi karena linknya sudah eksternal (WA).
+                        // Namun, jika ada navigasi ke #ppdb dari luar, kita aktifkan link default (seperti beranda)
+                    }
                 } else {
                     desktopLink.classList.remove('text-green-100', 'hover:bg-green-600');
                     desktopLink.classList.add('active', 'bg-green-600', 'text-white');
                 }
             }
-
+            
             // Cari link yang sesuai dengan targetId (mobile)
             const mobileLink = document.querySelector(`#mobile-menu a[href="#${targetId}"]`);
             if (mobileLink) {
-                 if (targetId === 'ppdb') {
-                    mobileLink.classList.remove('text-green-100', 'hover:bg-green-600');
-                    mobileLink.classList.add('active', 'bg-red-500', 'text-white');
+                 if (mobileLink.classList.contains('whatsapp-link')) {
+                    // Link WhatsApp tidak diaktifkan sebagai section, tapi langsung diklik
+                } else if (targetId === 'ppdb') {
+                    // Sama seperti di atas
                 } else {
                     mobileLink.classList.remove('text-green-100', 'hover:bg-green-600');
                     mobileLink.classList.add('active', 'bg-green-600', 'text-white');
@@ -481,49 +558,61 @@
             // Gulir ke atas halaman utama
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+        
+        // Memastikan Beranda ditampilkan saat load
+        showSection('beranda');
 
-        // Event Listener untuk Navigasi
+        // Event Listener untuk Navigasi (tetap menggunakan hash untuk navigasi antar-section)
         navLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                showSection(targetId);
-            });
+            if (!link.classList.contains('whatsapp-link')) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    showSection(targetId);
+                });
+            } else {
+                // Untuk link WhatsApp, biarkan default action (mengarah ke URL)
+                link.href = whatsappURL; 
+                link.target = "_blank";
+            }
         });
+
 
         // Event Listener untuk Tombol Menu Mobile
         mobileMenuButton.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Event Listener untuk Form Kontak
+        // Event Listener untuk Form Kontak (Simulasi Kirim)
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah pengiriman form
-            
-            // Simulasi pengiriman data
-            formMessage.textContent = 'Pesan Anda telah berhasil dikirim! Kami akan merespons secepatnya. Terima kasih!';
+            event.preventDefault();
+            formMessage.textContent = 'Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.';
             formMessage.classList.remove('hidden');
-            contactForm.reset(); // Kosongkan form
-            
-            // Sembunyikan pesan setelah 5 detik
+            contactForm.reset();
             setTimeout(() => {
                 formMessage.classList.add('hidden');
             }, 5000);
         });
-
-
-        // Logika saat halaman dimuat (menentukan section mana yang harus ditampilkan)
-        document.addEventListener('DOMContentLoaded', () => {
-            const initialHash = window.location.hash ? window.location.hash.substring(1) : 'beranda';
-            // Validasi hash untuk memastikan itu adalah salah satu ID section yang ada
-            const validIds = Array.from(sections).map(s => s.id);
-            if (validIds.includes(initialHash)) {
-                 showSection(initialHash);
-            } else {
-                 showSection('beranda');
+        
+        // Memuat konten saat URL hash berubah
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showSection(hash);
             }
         });
+
+        // Memastikan section yang benar ditampilkan saat halaman dimuat dengan hash
+        if (window.location.hash) {
+            showSection(window.location.hash.substring(1));
+        } else {
+            showSection('beranda');
+        }
+
+        // Memastikan link WhatsApp yang baru ditambahkan juga mengarah ke URL yang benar di Beranda
+        document.querySelector('#beranda a.whatsapp-button').href = whatsappURL;
+        document.querySelector('#ppdb a.whatsapp-button').href = whatsappURL;
+
     </script>
 </body>
 </html>
-
